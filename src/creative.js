@@ -160,8 +160,9 @@ function init() {
 	});
 
 	window.addEventListener('mousedown', function(e){mouseDown =true; if(typeof onMouseDown == 'function') onMouseDown() ;});
-	window.addEventListener('mouseup', function(e){mouseDown = false;if(typeof onMouseUp == 'function') onMouseDown()  ;});
+	window.addEventListener('mouseup', function(e){mouseDown = false;if(typeof onMouseUp == 'function') onMouseUp()  ;});
 	window.addEventListener('keydown', function(e){if(typeof onKeyDown == 'function') onKeyDown(e)  ;});
+	window.addEventListener('keyup', function(e){if(typeof onKeyUp == 'function') onKeyUp(e)  ;});
 	
 	if(typeof window.setup == 'function') window.setup();
 	cjsloop(); 

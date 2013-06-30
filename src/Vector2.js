@@ -6,8 +6,6 @@ var Vector2 = function (x,y) {
 	
 };
 
-
-
 Vector2.prototype = {
 
 	reset: function ( x, y ) {
@@ -133,7 +131,7 @@ Vector2.prototype = {
 	},	
 		
 	equals : function (v) {
-		return((this.x==v.x)&&(this.y==v.x));
+		return((this.x==v.x)&&(this.y==v.y));
 	},
 	
 	isCloseTo : function (v, tolerance) {	
@@ -147,15 +145,10 @@ Vector2.prototype = {
 	
 	rotateAroundPoint : function (point, angle, useRadians) {
 		Vector2Const.temp.copyFrom(this); 
-		//trace("rotate around point "+t+" "+point+" " +angle);
 		Vector2Const.temp.minusEq(point);
-		//trace("after subtract "+t);
 		Vector2Const.temp.rotate(angle, useRadians);
-		//trace("after rotate "+t);
 		Vector2Const.temp.plusEq(point);
-		//trace("after add "+t);
 		this.copyFrom(Vector2Const.temp);
-		
 	}, 
 	
 	isMagLessThan : function (distance) {
@@ -167,7 +160,7 @@ Vector2.prototype = {
 	}
 	
 	
-	// still AS3 to convert : 
+	// still to fix : 
 	// public function projectOnto(v:Vector2) : Vector2
 	// {
 	// 		var dp:Number = dot(v);
