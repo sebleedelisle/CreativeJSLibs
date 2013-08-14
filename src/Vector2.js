@@ -1,4 +1,3 @@
-
 var Vector2 = function (x,y) {
 	
 	this.x= x || 0; 
@@ -157,6 +156,10 @@ Vector2.prototype = {
 	
 	isMagGreaterThan : function (distance) {
 		return(this.magnitudeSquared()>distance*distance);
+	},
+	
+	cross : function(v) { 
+  		return (this.x*v.y) − (this.y*v.x);
 	}
 	
 	
