@@ -159,7 +159,7 @@ Vector2.prototype = {
 	},
 	
 	cross : function(v) { 
-  		return (this.x*v.y) − (this.y*v.x);
+  		return (this.x*v.y) - (this.y*v.x);
 	}
 	
 	
